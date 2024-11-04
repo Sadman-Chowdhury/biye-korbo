@@ -9,10 +9,9 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-
 $biodata_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-$query = "SELECT * FROM biodatas WHERE biodata_id = ?"; // Updated to 'biodata_id'
+$query = "SELECT * FROM biodatas WHERE biodata_id = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $biodata_id);
 $stmt->execute();
@@ -53,8 +52,27 @@ $is_favourite = $favourite_result->num_rows > 0;
             <ul class="space-y-2">
                 <li><strong>Name:</strong> <?= htmlspecialchars($biodata['name']) ?></li>
                 <li><strong>Age:</strong> <?= htmlspecialchars($biodata['age']) ?> years</li>
+                <li><strong>Height:</strong> <?= htmlspecialchars($biodata['height']) ?></li>
+                <li><strong>Weight:</strong> <?= htmlspecialchars($biodata['weight']) ?></li>
+                <li><strong>Religion:</strong> <?= htmlspecialchars($biodata['religion']) ?></li>
+                <li><strong>Caste:</strong> <?= htmlspecialchars($biodata['caste']) ?></li>
                 <li><strong>Occupation:</strong> <?= htmlspecialchars($biodata['occupation']) ?></li>
                 <li><strong>Division:</strong> <?= htmlspecialchars($biodata['division']) ?></li>
+                <li><strong>Education:</strong> <?= htmlspecialchars($biodata['education']) ?></li>
+                <li><strong>Income:</strong> <?= htmlspecialchars($biodata['income']) ?></li>
+                <li><strong>Marital Status:</strong> <?= htmlspecialchars($biodata['marital_status']) ?></li>
+                <li><strong>Hobbies:</strong> <?= htmlspecialchars($biodata['hobbies']) ?></li>
+                <li><strong>Lifestyle:</strong> <?= htmlspecialchars($biodata['lifestyle']) ?></li>
+            </ul>
+        </div>
+
+        <div class="p-6 border-2 border-purple-300 rounded-md shadow-lg bg-white">
+            <h2 class="text-2xl font-semibold mb-4">Family Information</h2>
+            <ul class="space-y-2">
+                <li><strong>Father's Name:</strong> <?= htmlspecialchars($biodata['father_name']) ?></li>
+                <li><strong>Mother's Name:</strong> <?= htmlspecialchars($biodata['mother_name']) ?></li>
+                <li><strong>Family Type:</strong> <?= htmlspecialchars($biodata['family_type']) ?></li>
+                <li><strong>Family Values:</strong> <?= htmlspecialchars($biodata['family_values']) ?></li>
             </ul>
         </div>
 
@@ -62,6 +80,12 @@ $is_favourite = $favourite_result->num_rows > 0;
             <h2 class="text-2xl font-semibold mb-4">Partner Preferences</h2>
             <ul class="space-y-2">
                 <li><strong>Expected Partner Age:</strong> <?= htmlspecialchars($biodata['expected_partner_age']) ?> years</li>
+                <li><strong>Expected Partner Height:</strong> <?= htmlspecialchars($biodata['expected_partner_height']) ?></li>
+                <li><strong>Expected Partner Weight:</strong> <?= htmlspecialchars($biodata['expected_partner_weight']) ?></li>
+                <li><strong>Expected Partner Religion:</strong> <?= htmlspecialchars($biodata['expected_partner_religion']) ?></li>
+                <li><strong>Expected Partner Education:</strong> <?= htmlspecialchars($biodata['expected_partner_education']) ?></li>
+                <li><strong>Expected Partner Income:</strong> <?= htmlspecialchars($biodata['expected_partner_income']) ?></li>
+                <li><strong>Expected Partner Marital Status:</strong> <?= htmlspecialchars($biodata['expected_partner_marital_status']) ?></li>
             </ul>
         </div>
 
@@ -69,6 +93,7 @@ $is_favourite = $favourite_result->num_rows > 0;
             <h2 class="text-2xl font-semibold mb-4">Contact Information</h2>
             <ul class="space-y-2">
                 <li><strong>Email:</strong> <a href="mailto:<?= htmlspecialchars($biodata['contact_email']) ?>" class="text-blue-500"><?= htmlspecialchars($biodata['contact_email']) ?></a></li>
+                <li><strong>Mobile Number:</strong> <?= htmlspecialchars($biodata['mobile_number']) ?></li>
             </ul>
         </div>
     </div>
@@ -96,7 +121,6 @@ $is_favourite = $favourite_result->num_rows > 0;
 <script>
     document.getElementById('contactRequestForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
         fetch('handleContactRequest.php', {
                 method: 'POST',
                 headers: {
@@ -120,7 +144,6 @@ $is_favourite = $favourite_result->num_rows > 0;
 
     document.getElementById('addFavouriteForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
         fetch('handleFavourites.php', {
                 method: 'POST',
                 headers: {
