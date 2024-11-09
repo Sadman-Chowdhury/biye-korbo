@@ -27,6 +27,7 @@ session_start();
                 <div class="hidden md:flex space-x-8 text-white">
                     <a href="index.php" class="hover:text-purple-400 transition">Home</a>
                     <a href="biodatas.php" class="hover:text-purple-400 transition">Biodatas</a>
+                    <a href="matchMaking.php" class="hover:text-purple-400 transition">Match Making</a>
                     <a href="about.php" class="hover:text-purple-400 transition">About Us</a>
                     <!-- <a href="contact.php" class="hover:text-purple-400 transition">Contact Us</a> -->
                 </div>
