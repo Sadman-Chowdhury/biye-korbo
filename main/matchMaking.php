@@ -44,7 +44,7 @@ $match_query = "
 
 $stmt = $conn->prepare($match_query);
 $stmt->bind_param(
-    "issiiiiiiiiss",
+    "issssssssssss",
     $user_id,
     $current_user_biodata['division'],
     $current_user_biodata['present_division'],
