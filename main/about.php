@@ -11,7 +11,7 @@ include '../includes/header.php';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- Vision Section -->
             <div class="flex flex-col items-center text-center">
-                <img src="../assets/images/vision.svg" alt="Vision" class="w-24 mb-4">
+                <img src="https://i.ibb.co.com/dtM5Bsv/vision-2421304.png" alt="Vision" class="w-24 mb-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">Our Vision</h2>
                 <p class="text-gray-600">
                     To be the most trusted and respected matrimony platform, bringing together people with shared values, cultures, and aspirations.
@@ -20,7 +20,7 @@ include '../includes/header.php';
 
             <!-- Mission Section -->
             <div class="flex flex-col items-center text-center">
-                <img src="../assets/images/mission.svg" alt="Mission" class="w-24 mb-4">
+                <img src="https://i.ibb.co.com/9hcDzmX/mission-4924441.png" alt="Mission" class="w-24 mb-4">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">Our Mission</h2>
                 <p class="text-gray-600">
                     To provide a platform that connects hearts and fosters meaningful relationships, creating lasting bonds and happy families.
@@ -35,7 +35,7 @@ include '../includes/header.php';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Feature 1 -->
             <div class="text-center">
-                <img src="../assets/images/safe.svg" alt="Safety" class="w-16 mx-auto mb-4">
+                <img src="https://i.ibb.co.com/ZxpCQwc/shield-508250.png" alt="Safety" class="w-16 mx-auto mb-4">
                 <h3 class="text-xl font-bold text-gray-800">Safe & Secure</h3>
                 <p class="text-gray-600">
                     Your privacy is our priority. We ensure your data is protected and interactions are secure.
@@ -44,7 +44,7 @@ include '../includes/header.php';
 
             <!-- Feature 2 -->
             <div class="text-center">
-                <img src="../assets/images/matchmaking.svg" alt="Matchmaking" class="w-16 mx-auto mb-4">
+                <img src="https://i.ibb.co.com/rprTYJg/search-3546947.png" alt="Matchmaking" class="w-16 mx-auto mb-4">
                 <h3 class="text-xl font-bold text-gray-800">Advanced Matchmaking</h3>
                 <p class="text-gray-600">
                     Using intelligent algorithms, we help you find partners that align with your preferences and values.
@@ -53,7 +53,7 @@ include '../includes/header.php';
 
             <!-- Feature 3 -->
             <div class="text-center">
-                <img src="../assets/images/support.svg" alt="Support" class="w-16 mx-auto mb-4">
+                <img src="https://i.ibb.co.com/6wr5ZjP/support-2268705.png" alt="Support" class="w-16 mx-auto mb-4">
                 <h3 class="text-xl font-bold text-gray-800">Dedicated Support</h3>
                 <p class="text-gray-600">
                     Our friendly support team is always here to assist you on your journey to find true love.
@@ -65,26 +65,12 @@ include '../includes/header.php';
     <!-- Team Section -->
     <div class="bg-white mt-10 p-8 rounded-lg shadow-lg">
         <h2 class="text-4xl font-bold text-center text-purple-600 mb-6">Meet Our Team</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="">
             <!-- Team Member 1 -->
             <div class="text-center">
-                <img src="../assets/images/team1.jpg" alt="Team Member" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                <h3 class="text-xl font-bold text-gray-800">John Doe</h3>
-                <p class="text-gray-600">Founder & CEO</p>
-            </div>
-
-            <!-- Team Member 2 -->
-            <div class="text-center">
-                <img src="../assets/images/team2.jpg" alt="Team Member" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                <h3 class="text-xl font-bold text-gray-800">Jane Smith</h3>
-                <p class="text-gray-600">Lead Developer</p>
-            </div>
-
-            <!-- Team Member 3 -->
-            <div class="text-center">
-                <img src="../assets/images/team3.jpg" alt="Team Member" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
-                <h3 class="text-xl font-bold text-gray-800">Ahmed Khan</h3>
-                <p class="text-gray-600">Customer Success Manager</p>
+                <img src="https://i.ibb.co.com/dc1Q9Cb/IMG-3163.jpg" alt="Team Member" class="w-32 h-[155px] object-cover rounded-xl mx-auto mb-4">
+                <h3 class="text-xl font-bold text-gray-800">Sadman Chowdhury</h3>
+                <p class="text-gray-600">Founder & Developer</p>
             </div>
         </div>
     </div>

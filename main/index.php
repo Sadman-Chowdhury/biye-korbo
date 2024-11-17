@@ -87,22 +87,6 @@ $result = mysqli_query($conn, $biodatas_query);
                 ?></p>
         </div>
     </div>
-
-    <div class="mb-8">
-        <h2 class="text-2xl font-bold text-center mb-4">Success Stories</h2>
-        <?php
-        $stories_query = "SELECT * FROM success_stories ORDER BY marriage_date DESC LIMIT 5";
-        $stories_result = mysqli_query($conn, $stories_query);
-        while ($story = mysqli_fetch_assoc($stories_result)) { ?>
-            <div class="success-story mb-4 flex items-center">
-                <img src="<?php echo htmlspecialchars($story['couple_image']); ?>" alt="Couple Image" class="w-16 h-16 rounded-full">
-                <div class="ml-4">
-                    <h3 class="text-xl"><?php echo date("F j, Y", strtotime($story['marriage_date'])); ?></h3>
-                    <p><?php echo htmlspecialchars($story['story_text']); ?></p>
-                </div>
-            </div>
-        <?php } ?>
-    </div>
 </div>
 
 <?php include('../includes/footer.php'); ?>
