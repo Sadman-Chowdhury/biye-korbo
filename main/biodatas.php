@@ -3,6 +3,7 @@ session_start();
 include '../includes/header.php';
 include '../includes/db.php';
 
+// Initialize the query
 $filter_query = "SELECT * FROM biodatas WHERE 1=1";
 
 $types = '';
@@ -10,10 +11,10 @@ $params = [];
 
 // Filter by age range
 if (!empty($_GET['age_min']) && !empty($_GET['age_max'])) {
-    $age_min = $_GET['age_min'];
-    $age_max = $_GET['age_max'];
+    $age_min = intval($_GET['age_min']);
+    $age_max = intval($_GET['age_max']);
     $filter_query .= " AND age BETWEEN ? AND ?";
-    $types .= 'ii'; // Two integers
+    $types .= 'ii';
     $params[] = $age_min;
     $params[] = $age_max;
 }
@@ -22,18 +23,19 @@ if (!empty($_GET['age_min']) && !empty($_GET['age_max'])) {
 if (!empty($_GET['biodata_type'])) {
     $biodata_type = $_GET['biodata_type'];
     $filter_query .= " AND biodata_type = ?";
-    $types .= 's'; // String type
+    $types .= 's';
     $params[] = $biodata_type;
 }
 
 // Filter by division
 if (!empty($_GET['division'])) {
     $division = $_GET['division'];
-    $filter_query .= " AND permanent_division = ?";
+    $filter_query .= " AND division = ?";
     $types .= 's';
     $params[] = $division;
 }
 
+// Prepare the statement
 $stmt = $conn->prepare($filter_query);
 
 if ($types) {
@@ -87,11 +89,11 @@ $result = $stmt->get_result();
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-12">
         <?php while ($row = $result->fetch_assoc()): ?>
             <div class="px-10 py-6 bg-white border rounded-lg shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="<?= $row['profile_image'] ?>" alt="Profile Image" class="w-full h-[200px] object-contain-1 rounded-md mb-4">
+                <img src="<?= htmlspecialchars($row['profile_image']) ?>" alt="Profile Image" class="w-full h-[200px] object-cover rounded-md mb-4">
                 <h2 class="text-xl font-bold text-gray-800 mb-2"><?= htmlspecialchars($row['name']) ?></h2>
                 <p class="text-gray-600">Age: <?= htmlspecialchars($row['age']) ?></p>
                 <p class="text-gray-600">Occupation: <?= htmlspecialchars($row['occupation']) ?></p>
-                <p class="text-gray-600">Division: <?= htmlspecialchars($row['permanent_division']) ?></p>
+                <p class="text-gray-600">Division: <?= htmlspecialchars($row['division']) ?></p>
                 <a href="viewProfile.php?id=<?= htmlspecialchars($row['biodata_id']) ?>" class="mt-4 inline-block bg-purple-500 hover:bg-purple-700 text-white py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">View Profile</a>
             </div>
         <?php endwhile; ?>
